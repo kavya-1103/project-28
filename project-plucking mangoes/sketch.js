@@ -20,7 +20,7 @@ function setup(){
 
 
     ground = new Ground(600,height,1200,20);
-  stoneObj = new Stone(235,420,60)
+  
   mango1 =new Mango(1100,100,30);
   mango2 = new Mango(980,120,35);
   mango3 = new Mango(1000,150,50);
@@ -38,7 +38,7 @@ function setup(){
   
 
     //log6 = new Log(230,180,80, PI/2);
-    slingshot = new SlingShot(stoneObj.body,{x:235, y:420});
+    slingshot = new SlingShot(stone.body,{x:235, y:420});
 }
 
 function draw(){
@@ -89,7 +89,7 @@ stone.display();
 }
 
 function mouseDragged(){
-    Matter.Body.setPosition(stoneObj.body, {x: mouseX , y: mouseY});
+    Matter.Body.setPosition(stone.body, {x: mouseX , y: mouseY});
 }
 
 
@@ -98,7 +98,7 @@ function mouseReleased(){
 }
 function keyPressed(){
     if(keyCode===32){
-        slingshot.attach(stoneObj.body)
+        slingshot.attach(stone.body)
     }
     
 }
